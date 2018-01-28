@@ -49,7 +49,7 @@ export function webPage(url: string): JsonLD.WebPage {
 }
 
 export function organization(title: string, logo?: Image): JsonLD.Organization {
-   const schema = { name: title };
+   const schema: { [key: string]: any } = { name: title };
    if (is.value(logo)) {
       schema['logo'] = image(logo);
    }
@@ -88,7 +88,7 @@ export function serialize(linkData: any): string {
 /**
  * Remove redundant context specifications
  */
-function removeContext(linkData: JsonLD.Thing, context: string = null) {
+export function removeContext(linkData: JsonLD.Thing, context: string = null) {
    if (
       linkData !== undefined &&
       linkData !== null &&

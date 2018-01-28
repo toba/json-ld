@@ -1,0 +1,82 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`renders breadcrumb correctly 1`] = `
+Object {
+  "@context": "http://schema.org",
+  "@type": "BreadcrumbList",
+  "item": Object {
+    "id": "http://example.com/page/",
+    "name": "First Title",
+  },
+  "position": 1,
+}
+`;
+
+exports[`renders breadcrumb correctly 2`] = `
+Object {
+  "@context": "http://schema.org",
+  "@type": "BreadcrumbList",
+  "item": Object {
+    "id": "http://example.com/page/",
+    "name": "Second Title",
+  },
+  "position": 2,
+}
+`;
+
+exports[`renders discover action correctly 1`] = `
+Object {
+  "@context": "http://schema.org",
+  "@type": "DiscoverAction",
+  "target": "http://example.com/page/",
+}
+`;
+
+exports[`renders image correctly 1`] = `
+Object {
+  "@context": "http://schema.org",
+  "@type": "ImageObject",
+  "height": 600,
+  "url": "http://example.com/photo.jpg",
+  "width": 800,
+}
+`;
+
+exports[`renders organization correctly 1`] = `
+Object {
+  "@context": "http://schema.org",
+  "@type": "Organization",
+  "logo": Object {
+    "@context": "http://schema.org",
+    "@type": "ImageObject",
+    "height": 600,
+    "url": "http://example.com/photo.jpg",
+    "width": 800,
+  },
+  "name": "Org With Logo",
+}
+`;
+
+exports[`renders organization correctly 2`] = `
+Object {
+  "@context": "http://schema.org",
+  "@type": "Organization",
+  "name": "Org Without Logo",
+}
+`;
+
+exports[`renders place correctly 1`] = `
+Object {
+  "@context": "http://schema.org",
+  "@type": "Place",
+  "hasMap": "http://example.com/page/",
+}
+`;
+
+exports[`renders webPage correctly 1`] = `
+Object {
+  "@context": "http://schema.org",
+  "@id": "http://example.com/page/",
+  "@type": "WebPage",
+}
+`;
