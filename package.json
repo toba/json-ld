@@ -1,13 +1,17 @@
 {
    "name": "@toba/json-ld",
    "description": "Toba JSON-LD",
-   "version": "1.0.0",
+   "version": "1.0.1",
    "private": false,
    "publishConfig": {
       "access": "public"
    },
    "main": "index.ts",
-   "files": ["index.ts", "lib/json-ld.d.ts", "lib/json-ld.ts"],
+   "files": [
+      "index.ts",
+      "lib/json-ld.d.ts",
+      "lib/json-ld.ts"
+   ],
    "author": {
       "name": "Jason Abbott"
    },
@@ -18,7 +22,8 @@
    "devDependencies": {
       "@toba/lint": "^1.3.0",
       "@toba/test": "^1.0.0",
-      "@toba/utility": "^1.6.0",
+      "@toba/tools": "^1.8.0",
+      "prettier": "^1.11.1",
       "typescript": "^2.6.0"
    },
    "repository": {
@@ -29,14 +34,6 @@
       "url": "https://github.com/toba/state/json-ld"
    },
    "dependencies": {},
-   "jest": {
-      "transform": {
-         "^.+\\.tsx?$": "ts-jest"
-      },
-      "transformIgnorePatterns": ["<rootDir>/node_modules/(?!@toba)"],
-      "testRegex": "(/__tests__/.*|(\\.|/)(test|spec))\\.(jsx?|tsx?)$",
-      "moduleFileExtensions": ["ts", "js"]
-   },
    "prettier": {
       "singleQuote": true,
       "tabWidth": 3

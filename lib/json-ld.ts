@@ -1,5 +1,5 @@
 import { JsonLD } from './json-ld.d';
-import { is } from '@toba/utility';
+import { is } from '@toba/tools';
 
 const defaultContext = 'http://schema.org';
 const contextField = '@context';
