@@ -92,7 +92,7 @@ export function removeContext(linkData: JsonLD.Thing, context: string = null) {
    if (
       linkData !== undefined &&
       linkData !== null &&
-      typeof linkData == is.type.OBJECT
+      typeof linkData == is.Type.Object
    ) {
       if (
          linkData.hasOwnProperty(contextField) &&
