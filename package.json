@@ -1,7 +1,7 @@
 {
    "name": "@toba/json-ld",
    "description": "Toba JSON-LD",
-   "version": "1.0.2",
+   "version": "1.0.3",
    "private": false,
    "publishConfig": {
       "access": "public"
