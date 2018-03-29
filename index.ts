@@ -1,4 +1,4 @@
-export { JsonLD } from './lib/json-ld.d';
+export { JsonLD } from './lib/types';
 export {
    image,
    ld,

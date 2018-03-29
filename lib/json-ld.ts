@@ -1,4 +1,4 @@
-import { JsonLD } from './json-ld.d';
+import { JsonLD } from './types';
 import { is } from '@toba/tools';
 
 const defaultContext = 'http://schema.org';
