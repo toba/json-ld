@@ -34,18 +34,18 @@ export function image(img: Image): JsonLD.ImageObject {
    if (img.height) {
       schema.height = img.height;
    }
-   return ld<JsonLD.ImageObject>('ImageObject', schema);
+   return ld<JsonLD.ImageObject>(JsonLD.Type.ImageObject, schema);
 }
 
 /**
  * Map place
  */
 export function place(mapUrl: string): JsonLD.Place {
-   return ld<JsonLD.Place>('Place', { hasMap: mapUrl });
+   return ld<JsonLD.Place>(JsonLD.Type.Place, { hasMap: mapUrl });
 }
 
 export function webPage(url: string): JsonLD.WebPage {
-   return ld<JsonLD.WebPage>('WebPage', { id: url });
+   return ld<JsonLD.WebPage>(JsonLD.Type.WebPage, { id: url });
 }
 
 export function organization(title: string, logo?: Image): JsonLD.Organization {
@@ -53,7 +53,7 @@ export function organization(title: string, logo?: Image): JsonLD.Organization {
    if (is.value(logo)) {
       schema['logo'] = image(logo);
    }
-   return ld<JsonLD.Organization>('Organization', schema);
+   return ld<JsonLD.Organization>(JsonLD.Type.Organization, schema);
 }
 
 export function breadcrumb(
@@ -65,17 +65,17 @@ export function breadcrumb(
    if (!isNaN(position)) {
       schema.position = position;
    }
-   return ld<JsonLD.BreadcrumbList>('BreadcrumbList', schema);
+   return ld<JsonLD.BreadcrumbList>(JsonLD.Type.BreadcrumbList, schema);
 }
 
 export function discoverAction(url: string): JsonLD.DiscoverAction {
-   return ld<JsonLD.DiscoverAction>('DiscoverAction', {
+   return ld<JsonLD.DiscoverAction>(JsonLD.Type.DiscoverAction, {
       target: url
    });
 }
 
 /**
- * Convert link data to string with nulls and zeroes removed
+ * Convert link data to string with nulls and zeroes removed.
  */
 export function serialize(linkData: any): string {
    removeContext(linkData);
@@ -86,7 +86,7 @@ export function serialize(linkData: any): string {
 }
 
 /**
- * Remove redundant context specifications
+ * Remove redundant context specifications.
  */
 export function removeContext(linkData: JsonLD.Thing, context: string = null) {
    if (

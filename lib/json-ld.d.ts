@@ -1,4 +1,17 @@
 export namespace JsonLD {
+   enum Type {
+      Blog = 'Blog',
+      BlogPosting = 'BlogPosting',
+      BreadcrumbList = 'BreadcrumbList',
+      DiscoverAction = 'DiscoverAction',
+      ImageObject = 'ImageObject',
+      Organization = 'Organization',
+      Place = 'Place',
+      SearchAction = 'SearchAction',
+      VideoObject = 'VideoObject',
+      WebPage = 'WebPage'
+   }
+
    /**
     * http://schema.org/Action
     */
