@@ -61,9 +61,9 @@
   dependencies:
     zlib "^1.0.5"
 
-"@toba/tools@^1.16.0":
-  version "1.16.0"
-  resolved "https://registry.yarnpkg.com/@toba/tools/-/tools-1.16.0.tgz#d0097c03366053a1e787ef5705d91296aa5ee869"
+"@toba/tools@^1.18.0":
+  version "1.18.0"
+  resolved "https://registry.yarnpkg.com/@toba/tools/-/tools-1.18.0.tgz#9f729fd69e162149e73df4172f65ed7b1ade4f87"
   dependencies:
     zlib "^1.0.5"
 

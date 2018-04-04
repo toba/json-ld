@@ -8,5 +8,6 @@ export {
    organization,
    breadcrumb,
    discoverAction,
-   serialize
+   serialize,
+   ILinkData
 } from './lib/json-ld';

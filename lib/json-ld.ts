@@ -12,6 +12,13 @@ export interface Image {
    height?: number;
 }
 
+export abstract class ILinkData<T extends JsonLD.Thing> {
+   abstract linkDataJSON(): T;
+   linkDataString(): string {
+      return serialize(this.linkDataJSON());
+   }
+}
+
 /**
  * Add standard Linked Data fields
  */
