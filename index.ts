@@ -9,5 +9,5 @@ export {
    breadcrumb,
    discoverAction,
    serialize,
-   ILinkData
+   LinkData
 } from './lib/json-ld';
