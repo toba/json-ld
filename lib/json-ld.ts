@@ -1,10 +1,7 @@
-import { JsonLD } from './types';
+import { JsonLD, contextField, typeField, idField } from './types';
 import { is } from '@toba/tools';
 
 const defaultContext = 'http://schema.org';
-const contextField = '@context';
-const typeField = '@type';
-const idField = '@id';
 
 export interface Image {
    url: string;
@@ -12,6 +9,9 @@ export interface Image {
    height?: number;
 }
 
+/**
+ * Class generates a JSON-LD representation.
+ */
 export abstract class LinkData<T extends JsonLD.Thing> {
    abstract linkDataJSON(): T;
    linkDataString(): string {
@@ -20,9 +20,12 @@ export abstract class LinkData<T extends JsonLD.Thing> {
 }
 
 /**
- * Add standard Linked Data fields
+ * Add standard Linked Data fields.
  */
-export function ld<T extends JsonLD.Thing>(type: string, fields: any = {}): T {
+export function ld<T extends JsonLD.Thing>(
+   type: string,
+   fields: Partial<T>
+): T {
    if (is.defined(fields, 'id')) {
       // rename ID field to standard
       fields[idField] = fields['id'];
@@ -30,7 +33,7 @@ export function ld<T extends JsonLD.Thing>(type: string, fields: any = {}): T {
    }
    fields[typeField] = type;
    fields[contextField] = defaultContext;
-   return fields;
+   return fields as T;
 }
 
 export function image(img: Image): JsonLD.ImageObject {
@@ -96,13 +99,9 @@ export function serialize(linkData: any): string {
  * Remove redundant context specifications.
  */
 export function removeContext(linkData: JsonLD.Thing, context: string = null) {
-   if (
-      linkData !== undefined &&
-      linkData !== null &&
-      typeof linkData == is.Type.Object
-   ) {
+   if (is.value(linkData) && typeof linkData == is.Type.Object) {
       if (
-         linkData.hasOwnProperty(contextField) &&
+         is.defined(linkData, contextField) &&
          linkData[contextField] !== null
       ) {
          if (context !== null && linkData[contextField] == context) {

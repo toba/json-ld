@@ -61,9 +61,9 @@
   dependencies:
     zlib "^1.0.5"
 
-"@toba/tools@^1.18.0":
-  version "1.18.0"
-  resolved "https://registry.yarnpkg.com/@toba/tools/-/tools-1.18.0.tgz#9f729fd69e162149e73df4172f65ed7b1ade4f87"
+"@toba/tools@^2.0.0":
+  version "2.0.1"
+  resolved "https://registry.yarnpkg.com/@toba/tools/-/tools-2.0.1.tgz#c5b3b7330588e1d4338f436ff8c81038801f21ef"
   dependencies:
     zlib "^1.0.5"
 
@@ -2758,9 +2758,9 @@ preserve@^0.2.0:
   version "0.2.0"
   resolved "https://registry.yarnpkg.com/preserve/-/preserve-0.2.0.tgz#815ed1f6ebc65926f865b310c0713bcb3315ce4b"
 
-prettier@^1.11.1:
-  version "1.11.1"
-  resolved "https://registry.yarnpkg.com/prettier/-/prettier-1.11.1.tgz#61e43fc4cd44e68f2b0dfc2c38cd4bb0fccdcc75"
+prettier@^1.12.0:
+  version "1.12.1"
+  resolved "https://registry.yarnpkg.com/prettier/-/prettier-1.12.1.tgz#c1ad20e803e7749faf905a409d2367e06bbe7325"
 
 pretty-format@^22.4.0:
   version "22.4.0"

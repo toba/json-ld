@@ -1,3 +1,6 @@
+export const contextField = '@context';
+export const typeField = '@type';
+export const idField = '@id';
 export namespace JsonLD {
    export enum Type {
       Blog = 'Blog',
@@ -13,7 +16,7 @@ export namespace JsonLD {
    }
 
    /**
-    * http://schema.org/Action
+    * @see http://schema.org/Action
     */
    export interface Action extends Thing {
       actionStatus: ActionStatusType;
@@ -26,16 +29,16 @@ export namespace JsonLD {
       object: Thing;
       result: Thing;
       startTime: Date;
-      target: EntryPoint;
+      target: EntryPoint | string;
    }
 
    /**
-    * http://schema.org/ActionStatusType
+    * @see http://schema.org/ActionStatusType
     */
    export interface ActionStatusType extends Thing {}
 
    /**
-    * http://schema.org/AdministrativeArea
+    * @see http://schema.org/AdministrativeArea
     */
    export interface AdministrativeArea extends Place {}
 
@@ -46,7 +49,7 @@ export namespace JsonLD {
    }
 
    /**
-    * http://schema.org/Article
+    * @see http://schema.org/Article
     */
    export interface Article extends CreativeWork {
       articleBody?: string;
@@ -58,7 +61,7 @@ export namespace JsonLD {
    }
 
    /**
-    * http://schema.org/Audience
+    * @see http://schema.org/Audience
     */
    export interface Audience extends Thing {
       audienceType: string;
@@ -66,19 +69,19 @@ export namespace JsonLD {
    }
 
    /**
-    * http://schema.org/Blog
+    * @see http://schema.org/Blog
     */
    export interface Blog extends Thing {
       blogPost: BlogPosting[];
    }
 
    /**
-    * http://schema.org/BlogPosting
+    * @see http://schema.org/BlogPosting
     */
    export interface BlogPosting extends SocialMediaPosting {}
 
    /**
-    * http://schema.org/Brand
+    * @see http://schema.org/Brand
     */
    export interface Brand extends Thing {
       aggregateRating?: AggregateRating;
@@ -87,27 +90,27 @@ export namespace JsonLD {
    }
 
    /**
-    * http://schema.org/Breadcrumb
+    * @see http://schema.org/Breadcrumb
     */
    export interface Breadcrumb extends Thing {}
 
    /**
-    * http://schema.org/BreadcrumbList
+    * @see http://schema.org/BreadcrumbList
     */
    export interface BreadcrumbList extends ItemList<Breadcrumb> {}
 
    /**
-    * http://schema.org/BusinessEntityType
+    * @see http://schema.org/BusinessEntityType
     */
    export interface BusinessEntityType extends Thing {}
 
    /**
-    * http://schema.org/BusinessFunction
+    * @see http://schema.org/BusinessFunction
     */
    export interface BusinessFunction extends Thing {}
 
    /**
-    * http://schema.org/Comment
+    * @see http://schema.org/Comment
     */
    export interface Comment extends CreativeWork {
       downvoteCount: number;
@@ -115,12 +118,12 @@ export namespace JsonLD {
    }
 
    /**
-    * http://schema.org/Country
+    * @see http://schema.org/Country
     */
    export interface Country extends Place {}
 
    /**
-    * http://schema.org/CreativeWork
+    * @see http://schema.org/CreativeWork
     */
    export interface CreativeWork extends Thing {
       author?: Person | Organization;
@@ -170,12 +173,12 @@ export namespace JsonLD {
    }
 
    /**
-    * http://schema.org/ContactPointOption
+    * @see http://schema.org/ContactPointOption
     */
    export interface ContactPointOption extends Thing {}
 
    /**
-    * http://schema.org/GeoCoordinates
+    * @see http://schema.org/GeoCoordinates
     */
    export interface Coordinates extends Thing {
       elevation: string | number;
@@ -185,18 +188,18 @@ export namespace JsonLD {
    }
 
    /**
-    * http://schema.org/DateTime
-    * https://en.wikipedia.org/wiki/ISO_8601
+    * @see http://schema.org/DateTime
+    * @see https://en.wikipedia.org/wiki/ISO_8601
     */
    export interface DateTime extends Thing {}
 
    /**
-    * http://schema.org/DayOfWeek
+    * @see http://schema.org/DayOfWeek
     */
    export interface DayOfWeek extends Thing {}
 
    /**
-    * http://schema.org/DeliveryMethod
+    * @see http://schema.org/DeliveryMethod
     */
    export interface DeliveryMethod extends Thing {
       method: {
@@ -212,7 +215,7 @@ export namespace JsonLD {
    }
 
    /**
-    * http://schema.org/Demand
+    * @see http://schema.org/Demand
     */
    export interface Demand extends Thing {
       acceptedPaymentMethod: LoanOrCredit | PaymentMethod;
@@ -250,22 +253,22 @@ export namespace JsonLD {
    }
 
    /**
-    * http://schema.org/DiscussionForumPosting
+    * @see http://schema.org/DiscussionForumPosting
     */
    export interface DiscussionForumPosting extends SocialMediaPosting {}
 
    /**
-    * http://schema.org/Distance
+    * @see http://schema.org/Distance
     */
    export interface Distance extends Thing {}
 
    /**
-    * http://schema.org/Duration
+    * @see http://schema.org/Duration
     */
    export interface Duration extends Thing {}
 
    /**
-    * http://schema.org/EducationalOrganization
+    * @see http://schema.org/EducationalOrganization
     */
    export interface EducationalOrganization extends Organization {
       alumni: Person[];
@@ -281,12 +284,12 @@ export namespace JsonLD {
    }
 
    /**
-    * http://schema.org/Enumeration
+    * @see http://schema.org/Enumeration
     */
    export interface Enumeration extends Thing {}
 
    /**
-    * http://schema.org/Event
+    * @see http://schema.org/Event
     */
    export interface Event extends Thing {
       actor: Person;
@@ -320,12 +323,12 @@ export namespace JsonLD {
    }
 
    /**
-    * http://schema.org/EventStatusType
+    * @see http://schema.org/EventStatusType
     */
    export interface EventStatusType extends Thing {}
 
    /**
-    * http://schema.org/FinancialProduct
+    * @see http://schema.org/FinancialProduct
     */
    export interface FinancialProduct extends Service {
       annualPercentageRate: number | QuantitativeValue;
@@ -334,12 +337,12 @@ export namespace JsonLD {
    }
 
    /**
-    * http://schema.org/GenderType
+    * @see http://schema.org/GenderType
     */
    export interface GenderType extends Thing {}
 
    /**
-    * http://schema.org/GeoCoordinates
+    * @see http://schema.org/GeoCoordinates
     */
    export interface GeoCoordinates extends Thing {
       address: PostalAddress | string;
@@ -362,7 +365,7 @@ export namespace JsonLD {
    }
 
    /**
-    * http://schema.org/ImageObject
+    * @see http://schema.org/ImageObject
     */
    export interface ImageObject extends MediaObject {
       caption?: string;
@@ -372,12 +375,12 @@ export namespace JsonLD {
    }
 
    /**
-    * http://schema.org/ItemAvailability
+    * @see http://schema.org/ItemAvailability
     */
    export interface ItemAvailability extends Thing {}
 
    /**
-    * http://schema.org/ItemList
+    * @see http://schema.org/ItemList
     */
    export interface ItemList<T extends Thing> extends Thing {
       itemListElement: ListItem<T>[] | string[] | Thing[];
@@ -386,17 +389,17 @@ export namespace JsonLD {
    }
 
    /**
-    * http://schema.org/ItemListOrderType
+    * @see http://schema.org/ItemListOrderType
     */
    export interface ItemListOrderType extends Thing {}
 
    /**
-    * http://schema.org/Language
+    * @see http://schema.org/Language
     */
    export interface Language extends Thing {}
 
    /**
-    * http://schema.org/ListItem
+    * @see http://schema.org/ListItem
     */
    export interface ListItem<T extends Thing> extends Thing {
       item: T;
@@ -406,7 +409,7 @@ export namespace JsonLD {
    }
 
    /**
-    * http://schema.org/LoanOrCredit
+    * @see http://schema.org/LoanOrCredit
     */
    export interface LoanOrCredit extends FinancialProduct {
       amount: MonetaryAmount | number;
@@ -415,7 +418,7 @@ export namespace JsonLD {
    }
 
    /**
-    * http://schema.org/LocationFeatureSpecification
+    * @see http://schema.org/LocationFeatureSpecification
     */
    export interface LocationFeatureSpecification extends PropertyValue {
       hoursAvailable: OpeningHoursSpecification;
@@ -435,7 +438,7 @@ export namespace JsonLD {
    }
 
    /**
-    * http://schema.org/MonetaryAmount
+    * @see http://schema.org/MonetaryAmount
     */
    export interface MonetaryAmount extends Thing {
       currency: string;
@@ -447,7 +450,7 @@ export namespace JsonLD {
    }
 
    /**
-    * http://schema.org/MusicAlbum
+    * @see http://schema.org/MusicAlbum
     */
    export interface MusicAlbum extends CreativeWork {
       albumProductionType: MusicAlbumProductionType;
@@ -457,17 +460,17 @@ export namespace JsonLD {
    }
 
    /**
-    * http://schema.org/MusicAlbumProductionType
+    * @see http://schema.org/MusicAlbumProductionType
     */
    export interface MusicAlbumProductionType extends Thing {}
 
    /**
-    * http://schema.org/MusicAlbumReleaseType
+    * @see http://schema.org/MusicAlbumReleaseType
     */
    export interface MusicAlbumReleaseType extends Thing {}
 
    /**
-    * http://schema.org/MusicComposition
+    * @see http://schema.org/MusicComposition
     */
    export interface MusicComposition extends CreativeWork {
       composer: Person | Organization;
@@ -483,7 +486,7 @@ export namespace JsonLD {
    }
 
    /**
-    * http://schema.org/MusicGroup
+    * @see http://schema.org/MusicGroup
     */
    export interface MusicGroup extends Organization {
       album: MusicAlbum;
@@ -492,7 +495,7 @@ export namespace JsonLD {
    }
 
    /**
-    * http://schema.org/MusicPlaylist
+    * @see http://schema.org/MusicPlaylist
     */
    export interface MusicPlaylist extends CreativeWork {
       numTracks: number;
@@ -500,7 +503,7 @@ export namespace JsonLD {
    }
 
    /**
-    * http://schema.org/MusicRecording
+    * @see http://schema.org/MusicRecording
     */
    export interface MusicRecording extends CreativeWork {
       byArtist: MusicGroup;
@@ -512,7 +515,7 @@ export namespace JsonLD {
    }
 
    /**
-    * http://schema.org/MusicRelease
+    * @see http://schema.org/MusicRelease
     */
    export interface MusicRelease extends MusicPlaylist {
       catalogNumber: string;
@@ -524,7 +527,7 @@ export namespace JsonLD {
    }
 
    /**
-    * http://schema.org/MusicReleaseFormatType
+    * @see http://schema.org/MusicReleaseFormatType
     */
    export interface MusicReleaseFormatType extends Thing {}
 
@@ -580,17 +583,17 @@ export namespace JsonLD {
    }
 
    /**
-    * http://schema.org/OfferCatalog
+    * @see http://schema.org/OfferCatalog
     */
    export interface OfferCatalog extends ItemList<Offer> {}
 
    /**
-    * http://schema.org/OfferItemCondition
+    * @see http://schema.org/OfferItemCondition
     */
    export interface OfferItemCondition extends Thing {}
 
    /**
-    * http://schema.org/OpeningHoursSpecification
+    * @see http://schema.org/OpeningHoursSpecification
     */
    export interface OpeningHoursSpecification extends Thing {
       closes: Date;
@@ -601,7 +604,7 @@ export namespace JsonLD {
    }
 
    /**
-    * http://schema.org/Organization
+    * @see http://schema.org/Organization
     */
    export interface Organization extends Thing {
       address: PostalAddress | string;
@@ -647,7 +650,7 @@ export namespace JsonLD {
    }
 
    /**
-    * http://schema.org/OwnershipInfo
+    * @see http://schema.org/OwnershipInfo
     */
    export interface OwnershipInfo extends Thing {
       acquiredFrom: Organization | Person;
@@ -657,12 +660,12 @@ export namespace JsonLD {
    }
 
    /**
-    * http://schema.org/PaymentMethod
+    * @see http://schema.org/PaymentMethod
     */
    export interface PaymentMethod extends Thing {}
 
    /**
-    * http://schema.org/Person
+    * @see http://schema.org/Person
     */
    export interface Person extends Thing {
       additionalName: string;
@@ -718,7 +721,7 @@ export namespace JsonLD {
    }
 
    /**
-    * http://schema.org/Photograph
+    * @see http://schema.org/Photograph
     */
    export interface Photograph extends CreativeWork {}
 
@@ -734,7 +737,7 @@ export namespace JsonLD {
       faxNumber: string;
       geo: GeoCoordinates | GeoShape;
       globalLocationNumber: string;
-      hasMap: Map<string, URL> | URL;
+      hasMap: Map<string, URL> | URL | string;
       isicV4: string;
       logo: ImageObject | URL;
       openingHoursSpecification: OpeningHoursSpecification;
@@ -755,7 +758,7 @@ export namespace JsonLD {
    }
 
    /**
-    * http://schema.org/PriceSpecification
+    * @see http://schema.org/PriceSpecification
     */
    export interface PriceSpecification extends Thing {
       eligibleQuantity: QuantitativeValue;
@@ -770,7 +773,7 @@ export namespace JsonLD {
    }
 
    /**
-    * http://schema.org/ProgramMembership
+    * @see http://schema.org/ProgramMembership
     */
    export interface ProgramMembership extends Thing {
       hostingOrganization: Organization;
@@ -813,7 +816,7 @@ export namespace JsonLD {
    }
 
    /**
-    * http://schema.org/ProductModel
+    * @see http://schema.org/ProductModel
     */
    export interface ProductModel extends Product {
       isVariantOf: ProductModel;
@@ -868,7 +871,7 @@ export namespace JsonLD {
    }
 
    /**
-    * http://schema.org/Rating
+    * @see http://schema.org/Rating
     */
    export interface Rating extends Thing {
       author: Organization | Person;
@@ -878,7 +881,7 @@ export namespace JsonLD {
    }
 
    /**
-    * http://schema.org/Review
+    * @see http://schema.org/Review
     */
    export interface Review extends CreativeWork {
       itemReviewed: Thing;
@@ -887,19 +890,19 @@ export namespace JsonLD {
    }
 
    /**
-    * http://schema.org/SearchAction
+    * @see http://schema.org/SearchAction
     */
    export interface SearchAction extends Action {
       query: string;
    }
 
    /**
-    * http://schema.org/DiscoverAction
+    * @see http://schema.org/DiscoverAction
     */
    export interface DiscoverAction extends Action {}
 
    /**
-    * http://schema.org/Service
+    * @see http://schema.org/Service
     */
    export interface Service extends Thing {
       aggregateRating: AggregateRating;
@@ -923,7 +926,7 @@ export namespace JsonLD {
    }
 
    /**
-    * http://schema.org/ServiceChannel
+    * @see http://schema.org/ServiceChannel
     */
    export interface ServiceChannel extends Thing {
       availableLanguage: Language;
@@ -937,14 +940,14 @@ export namespace JsonLD {
    }
 
    /**
-    * http://schema.org/SocialMediaPosting
+    * @see http://schema.org/SocialMediaPosting
     */
    export interface SocialMediaPosting extends Article {
       sharedContent?: CreativeWork;
    }
 
    /**
-    * http://schema.org/SoftwareApplication
+    * @see http://schema.org/SoftwareApplication
     */
    export interface SoftwareApplication extends Thing {
       applicationCategory: string;
@@ -955,20 +958,20 @@ export namespace JsonLD {
    }
 
    /**
-    * http://schema.org/Specialty
+    * @see http://schema.org/Specialty
     */
    export interface Specialty extends Thing {}
 
    /**
-    * http://schema.org/StructuredValue
+    * @see http://schema.org/StructuredValue
     */
    export interface StructuredValue extends Thing {}
 
    export interface Thing {
       [key: string]: any;
-      '@id'?: string;
-      '@context'?: string;
-      '@type'?: string;
+      [idField]?: string;
+      [contextField]?: string;
+      [typeField]?: string;
       name?: string;
       description?: string;
       image?: ImageObject | string;
@@ -981,7 +984,7 @@ export namespace JsonLD {
    }
 
    /**
-    * http://schema.org/TypeAndQuantityNode
+    * @see http://schema.org/TypeAndQuantityNode
     */
    export interface TypeAndQuantityNode extends Thing {
       amountOfThisGood: number;
@@ -994,7 +997,7 @@ export namespace JsonLD {
    export interface URL extends Thing {}
 
    /**
-    * http://schema.org/VideoObject
+    * @see http://schema.org/VideoObject
     */
    export interface VideoObject extends MediaObject {
       actor: Person;
@@ -1008,7 +1011,7 @@ export namespace JsonLD {
    }
 
    /**
-    * http://schema.org/WarrantyPromise
+    * @see http://schema.org/WarrantyPromise
     */
    export interface WarrantyPromise extends Thing {
       durationOfWarranty: QuantitativeValue;
@@ -1016,12 +1019,12 @@ export namespace JsonLD {
    }
 
    /**
-    * http://schema.org/WarrantyScope
+    * @see http://schema.org/WarrantyScope
     */
    export interface WarrantyScope extends Thing {}
 
    /**
-    * http://schema.org/WebPage
+    * @see http://schema.org/WebPage
     */
    export interface WebPage extends CreativeWork {
       breadcrumb?: BreadcrumbList | Breadcrumb[];
@@ -1035,12 +1038,12 @@ export namespace JsonLD {
    }
 
    /**
-    * http://schema.org/WebPageElement
+    * @see http://schema.org/WebPageElement
     */
    export interface WebPageElement extends CreativeWork {}
 
    /**
-    * http://schema.org/WebSite
+    * @see http://schema.org/WebSite
     */
    export interface WebSite extends CreativeWork {}
 }
