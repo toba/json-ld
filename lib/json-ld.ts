@@ -17,66 +17,75 @@ export interface LinkData<T extends JsonLD.Thing> {
 }
 
 /**
- * Add standard Linked Data fields.
+ * Update Link Data schema with standard fields.
  */
-export function ld<T extends JsonLD.Thing>(
+export function standardize<T extends JsonLD.Thing>(
    type: string,
-   fields: Partial<T>
+   schema: Partial<T>
 ): T {
-   if (is.defined(fields, 'id')) {
+   if (is.defined(schema, 'id')) {
       // rename ID field to standard
-      fields[idField] = fields['id'];
-      delete fields['id'];
+      schema[idField] = schema['id'];
+      delete schema['id'];
    }
-   fields[typeField] = type;
-   fields[contextField] = defaultContext;
-   return fields as T;
-}
-
-export function image(img: Image): JsonLD.ImageObject {
-   const schema: JsonLD.ImageObject = { url: img.url };
-   if (img.width) {
-      schema.width = img.width;
-   }
-   if (img.height) {
-      schema.height = img.height;
-   }
-   return ld<JsonLD.ImageObject>(JsonLD.Type.ImageObject, schema);
+   schema[typeField] = type;
+   schema[contextField] = defaultContext;
+   return schema as T;
 }
 
 /**
- * Map place
+ * Basic Link Data for an image URL and optional dimensions.
  */
-export function place(mapUrl: string): JsonLD.Place {
-   return ld<JsonLD.Place>(JsonLD.Type.Place, { hasMap: mapUrl });
-}
-
-export function webPage(url: string): JsonLD.WebPage {
-   return ld<JsonLD.WebPage>(JsonLD.Type.WebPage, { id: url });
-}
-
-export function organization(title: string, logo?: Image): JsonLD.Organization {
-   const schema: { [key: string]: any } = { name: title };
-   if (is.value(logo)) {
-      schema['logo'] = image(logo);
+export function image(img: Image): JsonLD.ImageObject {
+   const schema: JsonLD.ImageObject = { url: img.url };
+   if (is.value(img.width)) {
+      schema.width = img.width;
    }
-   return ld<JsonLD.Organization>(JsonLD.Type.Organization, schema);
+   if (is.value(img.height)) {
+      schema.height = img.height;
+   }
+   return standardize<JsonLD.ImageObject>(JsonLD.Type.ImageObject, schema);
+}
+
+/**
+ * Basic Link data for place with a map URL.
+ */
+export function place(mapURL: string): JsonLD.Place {
+   return standardize<JsonLD.Place>(JsonLD.Type.Place, { hasMap: mapURL });
+}
+
+/**
+ * Basic Link Data for a web page.
+ */
+export function webPage(url: string): JsonLD.WebPage {
+   return standardize<JsonLD.WebPage>(JsonLD.Type.WebPage, { id: url });
+}
+
+/**
+ * Basic Link Data for an organization.
+ */
+export function organization(title: string, logo?: Image): JsonLD.Organization {
+   const schema: JsonLD.Organization = { name: title };
+   if (is.value(logo)) {
+      schema.logo = image(logo);
+   }
+   return standardize<JsonLD.Organization>(JsonLD.Type.Organization, schema);
 }
 
 export function breadcrumb(
    url: string,
    title: string,
    position: number
-): JsonLD.BreadcrumbList {
-   const schema: { [key: string]: any } = { item: { id: url, name: title } };
+): JsonLD.Breadcrumb {
+   const schema: JsonLD.Breadcrumb = { item: { id: url, name: title } };
    if (!isNaN(position)) {
       schema.position = position;
    }
-   return ld<JsonLD.BreadcrumbList>(JsonLD.Type.BreadcrumbList, schema);
+   return standardize<JsonLD.Breadcrumb>(JsonLD.Type.Breadcrumb, schema);
 }
 
 export function discoverAction(url: string): JsonLD.DiscoverAction {
-   return ld<JsonLD.DiscoverAction>(JsonLD.Type.DiscoverAction, {
+   return standardize<JsonLD.DiscoverAction>(JsonLD.Type.DiscoverAction, {
       target: url
    });
 }

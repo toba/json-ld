@@ -1,7 +1,7 @@
 export { JsonLD } from './lib/types';
 export {
    image,
-   ld,
+   standardize as ld,
    Image,
    place,
    webPage,
