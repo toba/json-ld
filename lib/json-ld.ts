@@ -12,11 +12,8 @@ export interface Image {
 /**
  * Class generates a JSON-LD representation.
  */
-export abstract class LinkData<T extends JsonLD.Thing> {
-   abstract linkDataJSON(): T;
-   linkDataString(): string {
-      return serialize(this.linkDataJSON());
-   }
+export interface LinkData<T extends JsonLD.Thing> {
+   jsonLD(): T;
 }
 
 /**
