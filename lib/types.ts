@@ -9,6 +9,7 @@ export namespace JsonLD {
       DiscoverAction = 'DiscoverAction',
       ImageObject = 'ImageObject',
       Organization = 'Organization',
+      Person = 'Person',
       Place = 'Place',
       SearchAction = 'SearchAction',
       VideoObject = 'VideoObject',
