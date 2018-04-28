@@ -1,3 +1,4 @@
+import '@toba/test';
 import {
    breadcrumb,
    image,
@@ -5,8 +6,10 @@ import {
    webPage,
    organization,
    discoverAction,
+   removeContext,
    Image
 } from './json-ld';
+import { contextField } from './types';
 
 const url = 'http://example.com/page/';
 const logo: Image = {
@@ -28,8 +31,10 @@ test('renders webPage correctly', () => {
 });
 
 test('renders organization correctly', () => {
-   expect(organization('Org With Logo', logo)).toMatchSnapshot();
-   expect(organization('Org Without Logo')).toMatchSnapshot();
+   const orgWithLogo = organization('Org With Logo', logo);
+   const orgNoLogo = organization('Org Without Logo');
+   expect(orgWithLogo).toMatchSnapshot();
+   expect(orgNoLogo).toMatchSnapshot();
 });
 
 test('renders breadcrumb correctly', () => {
@@ -39,4 +44,15 @@ test('renders breadcrumb correctly', () => {
 
 test('renders discover action correctly', () => {
    expect(discoverAction(url)).toMatchSnapshot();
+});
+
+test('removes redundant context', () => {
+   const orgWithLogo = organization('Org With Logo', logo);
+   expect(orgWithLogo).toHaveAllProperties(contextField, 'logo');
+   // normalization should remove redudant context properties
+   expect(orgWithLogo.logo).toHaveProperty(contextField);
+
+   removeContext(orgWithLogo);
+
+   expect(orgWithLogo.logo).not.toHaveProperty(contextField);
 });
