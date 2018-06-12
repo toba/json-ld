@@ -1,4 +1,4 @@
-export { JsonLD } from './lib/types';
+export { JsonLD } from './types';
 export {
    image,
    standardize as ld,
@@ -10,4 +10,4 @@ export {
    discoverAction,
    serialize,
    LinkData
-} from './lib/json-ld';
+} from './json-ld';
