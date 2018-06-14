@@ -1,14 +1,16 @@
 {
    "name": "@toba/json-ld",
    "description": "Toba JSON-LD",
-   "version": "1.2.4",
+   "version": "1.2.5",
    "private": false,
    "publishConfig": {
       "access": "public"
    },
    "main": "dist/index.js",
    "types:": "dist/index.d.ts",
-   "files": ["dist/**/*"],
+   "files": [
+      "dist/**/*"
+   ],
    "author": {
       "name": "Jason Abbott"
    },
