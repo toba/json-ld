@@ -1,15 +1,16 @@
 {
    "name": "@toba/json-ld",
    "description": "Toba JSON-LD",
-   "version": "1.2.6",
+   "version": "2.0.0",
    "private": false,
    "publishConfig": {
       "access": "public"
    },
-   "main": "dist/index.js",
-   "types:": "dist/index.d.ts",
+   "main": "lib/index.ts",
+   "types:": "js/index.d.ts",
    "files": [
-      "dist/**/*"
+      "lib/**/!(*.test).ts",
+      "js"
    ],
    "author": {
       "name": "Jason Abbott"
@@ -20,9 +21,9 @@
       "test": "jest --coverage"
    },
    "devDependencies": {
-      "@toba/build": "^1.5.0",
-      "@toba/test": "^1.13.0",
-      "@toba/tools": "^3.15.0",
+      "@toba/build": "^1.8.4",
+      "@toba/test": "^2.0.3",
+      "@toba/tools": "^4.0.3",
       "prettier": "^1.13.0",
       "typescript": "^3.1.0"
    },
