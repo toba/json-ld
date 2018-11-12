@@ -104,7 +104,7 @@ export function serialize(linkData: any): string {
 /**
  * Remove redundant context specifications.
  */
-export function removeContext(linkData: JsonLD.Thing, context: string = null) {
+export function removeContext(linkData: JsonLD.Thing, context?: string) {
    if (is.value(linkData) && typeof linkData == is.Type.Object) {
       if (
          is.defined(linkData, contextField) &&
