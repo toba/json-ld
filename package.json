@@ -23,9 +23,7 @@
    "devDependencies": {
       "@toba/build": "^2.0.0",
       "@toba/test": "^2.0.3",
-      "@toba/tools": "^4.0.3",
-      "prettier": "^1.13.0",
-      "typescript": "^3.1.0"
+      "@toba/tools": "^4.2.0"
    },
    "repository": {
       "type": "git",

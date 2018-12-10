@@ -1,5 +1,5 @@
-import { JsonLD, contextField, typeField, idField } from './types';
 import { is } from '@toba/tools';
+import { JsonLD, contextField, typeField, idField } from './types';
 
 const defaultContext = 'http://schema.org';
 
@@ -95,9 +95,8 @@ export function discoverAction(url: string): JsonLD.DiscoverAction {
  */
 export function serialize(linkData: any): string {
    removeContext(linkData);
-   return JSON.stringify(
-      linkData,
-      (_key, value) => (value === null || value === 0 ? undefined : value)
+   return JSON.stringify(linkData, (_key, value) =>
+      value === null || value === 0 ? undefined : value
    );
 }
 
