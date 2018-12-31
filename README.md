@@ -3,7 +3,7 @@
 ![Code style](https://img.shields.io/badge/code_style-prettier-ff69b4.svg)
 [![Dependencies](https://img.shields.io/david/toba/json-ld.svg)](https://david-dm.org/toba/json-ld)
 [![DevDependencies](https://img.shields.io/david/dev/toba/json-ld.svg)](https://david-dm.org/toba/json-ld#info=devDependencies&view=list)
-[![codecov](https://codecov.io/gh/toba/json-ld/branch/master/graph/badge.svg)](https://codecov.io/gh/toba/json-ld)
+[![Test Coverage](https://codecov.io/gh/toba/json-ld/branch/master/graph/badge.svg)](https://codecov.io/gh/toba/json-ld)
 
 <img src='https://toba.github.io/about/images/logo-colored.svg' width="100" align="right"/>
 
@@ -26,7 +26,7 @@ const rating: JsonLD:Rating = {
 
 ## Helper Functions
 
-The library can be used for only its type definitios (interfaces).
+The library can be used for only its type definitions (interfaces).
 
 ### Format
 
@@ -114,7 +114,7 @@ discoverAction(url: string)
 
 ## License
 
-Copyright &copy; 2018 Jason Abbott
+Copyright &copy; 2019 Jason Abbott
 
 This software is licensed under the MIT license. See the [LICENSE](./LICENSE) file
 accompanying this software for terms of use.
