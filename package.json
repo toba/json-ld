@@ -21,7 +21,7 @@
    },
    "devDependencies": {
       "@toba/develop": "^6.4.2",
-      "@toba/test": "^3.0.0",
+      "@toba/test": "^3.8.1",
       "@toba/tools": "^5.0.0"
    },
    "repository": {
