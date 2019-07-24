@@ -1,22 +1,8 @@
 export const contextField = '@context';
 export const typeField = '@type';
 export const idField = '@id';
-export namespace JsonLD {
-   export enum Type {
-      Blog = 'Blog',
-      BlogPosting = 'BlogPosting',
-      Breadcrumb = 'Breadcrumb',
-      BreadcrumbList = 'BreadcrumbList',
-      DiscoverAction = 'DiscoverAction',
-      ImageObject = 'ImageObject',
-      Organization = 'Organization',
-      Person = 'Person',
-      Place = 'Place',
-      SearchAction = 'SearchAction',
-      VideoObject = 'VideoObject',
-      WebPage = 'WebPage'
-   }
 
+export declare namespace JsonLD {
    /**
     * An action performed by a direct agent and indirect participants upon a
     * direct object. Optionally happens at a location with the help of an
@@ -1222,7 +1208,7 @@ export namespace JsonLD {
     */
    export interface WarrantyScope extends Thing {}
 
-   /**
+   /*
     * @see http://schema.org/WebPage
     */
    export interface WebPage extends CreativeWork {
@@ -1245,4 +1231,19 @@ export namespace JsonLD {
     * @see http://schema.org/WebSite
     */
    export interface WebSite extends CreativeWork {}
+}
+
+export const enum Type {
+   Blog = 'Blog',
+   BlogPosting = 'BlogPosting',
+   Breadcrumb = 'Breadcrumb',
+   BreadcrumbList = 'BreadcrumbList',
+   DiscoverAction = 'DiscoverAction',
+   ImageObject = 'ImageObject',
+   Organization = 'Organization',
+   Person = 'Person',
+   Place = 'Place',
+   SearchAction = 'SearchAction',
+   VideoObject = 'VideoObject',
+   WebPage = 'WebPage'
 }

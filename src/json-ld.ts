@@ -1,5 +1,5 @@
 import { is } from '@toba/tools';
-import { JsonLD, contextField, typeField, idField } from './types';
+import { JsonLD, contextField, typeField, idField, Type } from './types';
 
 const defaultContext = 'http://schema.org';
 
@@ -44,21 +44,21 @@ export function image(img: Image): JsonLD.ImageObject {
    if (is.value(img.height)) {
       schema.height = img.height;
    }
-   return standardize<JsonLD.ImageObject>(JsonLD.Type.ImageObject, schema);
+   return standardize<JsonLD.ImageObject>(Type.ImageObject, schema);
 }
 
 /**
  * Basic Link data for place with a map URL.
  */
 export function place(mapURL: string): JsonLD.Place {
-   return standardize<JsonLD.Place>(JsonLD.Type.Place, { hasMap: mapURL });
+   return standardize<JsonLD.Place>(Type.Place, { hasMap: mapURL });
 }
 
 /**
  * Basic Link Data for a web page.
  */
 export function webPage(url: string): JsonLD.WebPage {
-   return standardize<JsonLD.WebPage>(JsonLD.Type.WebPage, { id: url });
+   return standardize<JsonLD.WebPage>(Type.WebPage, { id: url });
 }
 
 /**
@@ -66,10 +66,10 @@ export function webPage(url: string): JsonLD.WebPage {
  */
 export function organization(title: string, logo?: Image): JsonLD.Organization {
    const schema: JsonLD.Organization = { name: title };
-   if (is.value(logo)) {
+   if (is.value<Image>(logo)) {
       schema.logo = image(logo);
    }
-   return standardize<JsonLD.Organization>(JsonLD.Type.Organization, schema);
+   return standardize<JsonLD.Organization>(Type.Organization, schema);
 }
 
 export function breadcrumb(
@@ -81,11 +81,11 @@ export function breadcrumb(
    if (!isNaN(position)) {
       schema.position = position;
    }
-   return standardize<JsonLD.Breadcrumb>(JsonLD.Type.Breadcrumb, schema);
+   return standardize<JsonLD.Breadcrumb>(Type.Breadcrumb, schema);
 }
 
 export function discoverAction(url: string): JsonLD.DiscoverAction {
-   return standardize<JsonLD.DiscoverAction>(JsonLD.Type.DiscoverAction, {
+   return standardize<JsonLD.DiscoverAction>(Type.DiscoverAction, {
       target: url
    });
 }
