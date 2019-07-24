@@ -1,22 +1,25 @@
 {
    "name": "@toba/json-ld",
    "description": "Toba JSON-LD",
-   "version": "3.1.2",
+   "version": "3.2.0",
    "private": false,
    "publishConfig": {
       "access": "public"
    },
-   "main": "cjs/index.js",
-   "types:": "cjs/index.d.ts",
+   "main": "esm/index.js",
+   "types:": "esm/index.d.ts",
    "files": [
-      "cjs"
+      "cjs",
+      "esm"
    ],
    "author": {
       "name": "Jason Abbott"
    },
    "license": "MIT",
    "scripts": {
-      "prepublishOnly": "./node_modules/.bin/tsc",
+      "build:esm": "./node_modules/.bin/tsc --project tsconfig.build.json",
+      "build:cjs": "./node_modules/.bin/tsc --project tsconfig.build.json",
+      "prepublishOnly": "npm run build:esm & npm run build:cjs",
       "test": "jest --coverage"
    },
    "devDependencies": {
