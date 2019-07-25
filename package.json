@@ -1,7 +1,7 @@
 {
    "name": "@toba/json-ld",
    "description": "Toba JSON-LD",
-   "version": "3.2.1",
+   "version": "3.2.2",
    "private": false,
    "publishConfig": {
       "access": "public"
@@ -24,8 +24,8 @@
    },
    "devDependencies": {
       "@toba/develop": "^6.5.5",
-      "@toba/test": "^4.0.0",
-      "@toba/tools": "^6.0.0"
+      "@toba/test": "^4.1.0",
+      "@toba/tools": "^6.6.6"
    },
    "repository": {
       "type": "git",
