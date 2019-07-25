@@ -1,7 +1,7 @@
 {
    "name": "@toba/json-ld",
    "description": "Toba JSON-LD",
-   "version": "3.2.2",
+   "version": "3.2.3",
    "private": false,
    "publishConfig": {
       "access": "public"
@@ -18,7 +18,7 @@
    "license": "MIT",
    "scripts": {
       "build:esm": "./node_modules/.bin/tsc --project tsconfig.build.json",
-      "build:cjs": "./node_modules/.bin/tsc --project tsconfig.build.json",
+      "build:cjs": "./node_modules/.bin/tsc --project tsconfig.cjs.json",
       "prepublishOnly": "npm run build:esm & npm run build:cjs",
       "test": "jest --coverage"
    },
