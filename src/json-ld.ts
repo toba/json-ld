@@ -1,4 +1,4 @@
-import { is } from '@toba/tools';
+import { is, ValueType } from '@toba/tools';
 import { JsonLD, contextField, typeField, idField, Type } from './types';
 
 const defaultContext = 'http://schema.org';
@@ -104,7 +104,7 @@ export function serialize(linkData: any): string {
  * Remove redundant context specifications.
  */
 export function removeContext(linkData: JsonLD.Thing, context?: string) {
-   if (is.value(linkData) && typeof linkData == is.Type.Object) {
+   if (is.value(linkData) && typeof linkData == ValueType.Object) {
       if (
          is.defined(linkData, contextField) &&
          linkData[contextField] !== null

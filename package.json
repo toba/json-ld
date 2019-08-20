@@ -1,12 +1,13 @@
 {
    "name": "@toba/json-ld",
    "description": "Toba JSON-LD",
-   "version": "3.2.3",
+   "version": "3.2.4",
    "private": false,
    "publishConfig": {
       "access": "public"
    },
-   "main": "esm/index.js",
+   "main": "cjs/index.js",
+   "module": "esm/index.js",
    "types:": "esm/index.d.ts",
    "files": [
       "cjs",
@@ -17,15 +18,15 @@
    },
    "license": "MIT",
    "scripts": {
-      "build:esm": "./node_modules/.bin/tsc --project tsconfig.build.json",
-      "build:cjs": "./node_modules/.bin/tsc --project tsconfig.cjs.json",
+      "build:esm": "./node_modules/.bin/tsc --project ./node_modules/@toba/develop/tsconfig.esm.json",
+      "build:cjs": "./node_modules/.bin/tsc --project ./node_modules/@toba/develop/tsconfig.cjs-min.json",
       "prepublishOnly": "npm run build:esm & npm run build:cjs",
       "test": "jest --coverage"
    },
    "devDependencies": {
-      "@toba/develop": "^6.6.1",
-      "@toba/test": "^4.1.0",
-      "@toba/tools": "^6.6.6"
+      "@toba/develop": "^6.6.11",
+      "@toba/test": "^4.1.6",
+      "@toba/tools": "^6.7.5"
    },
    "repository": {
       "type": "git",
