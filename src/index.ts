@@ -1,4 +1,4 @@
-export { JsonLD } from './types';
+export { JsonLD, Type as SchemaType } from './types';
 export {
    image,
    standardize as ld,
