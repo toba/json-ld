@@ -1,4 +1,4 @@
-export { JsonLD, Type as SchemaType } from './types';
+export { JsonLD, Type as SchemaType } from './types'
 export {
    image,
    standardize as ld,
@@ -10,4 +10,4 @@ export {
    discoverAction,
    serialize,
    LinkData
-} from './json-ld';
+} from './json-ld'
