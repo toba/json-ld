@@ -25,7 +25,7 @@ export function standardize<T extends JsonLD.Thing>(
 ): T {
    if (is.defined(schema, 'id')) {
       // rename ID field to standard
-      schema[idField] = schema['id']
+      schema[idField] = schema.id
       delete schema['id']
    }
    schema[typeField] = type
