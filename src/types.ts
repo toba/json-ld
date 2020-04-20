@@ -1245,5 +1245,5 @@ export const enum Type {
    Place = 'Place',
    SearchAction = 'SearchAction',
    VideoObject = 'VideoObject',
-   WebPage = 'WebPage'
+   WebPage = 'WebPage',
 }
